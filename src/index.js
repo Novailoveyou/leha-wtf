@@ -1,4 +1,5 @@
-import { encryptText, normalizeTimestamp, toXDigits } from './utils'
+import { createWTF, normalizeTimestamp } from './utils'
+import 'dotenv/config'
 
 /**
  * @example
