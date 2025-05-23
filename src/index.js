@@ -1,5 +1,5 @@
-import { createWTF, normalizeTimestamp } from './utils'
 import 'dotenv/config'
+import { createWTF, normalizeTimestamp } from './utils'
 
 /**
  * @example
