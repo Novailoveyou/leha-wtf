@@ -30,12 +30,12 @@ export const toXDigits = (num, width = 10) => {
   return Number(`${prefix}${Number(output) + remainder}`)
 }
 
-export const encryptText = (str, secretKey) => {
+export const createWTF = (str, secretKey) => {
   if (typeof str !== 'string' || !str)
-    throw new Error('encryptText: str must be a non-empty string')
+    throw new Error('createWTF: str must be a non-empty string')
 
   if (typeof secretKey !== 'string' || !secretKey)
-    throw new Error('encryptText: secretKey must be a non-empty string')
+    throw new Error('createWTF: secretKey must be a non-empty string')
 
   return AES.encrypt(str, secretKey).toString()
 }
@@ -44,5 +44,5 @@ export const normalizeTimestamp = timestamp => {
   if (typeof timestamp !== 'number')
     throw new Error('normalizeTimestamp: timestamp must be typeof number')
 
-  return String(Math.floor(toXDigits(timestamp / 1e3, 10)))
+  return Math.floor(timestamp / 1e3)
 }

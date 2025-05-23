@@ -41,9 +41,9 @@ const lehaWTF = ((timestamp, secretKey) => {
 
   const normalizedTimestamp = normalizeTimestamp(numTimestamp)
 
-  const wtf = encryptText(normalizedTimestamp, secretKey)
+  const wtf = createWTF(String(normalizedTimestamp), secretKey)
 
-  const output = JSON.stringify({ wtf, timestamp: toXDigits(numTimestamp, 10) })
+  const output = JSON.stringify({ wtf, timestamp: normalizedTimestamp })
 
   console.log(output)
 
